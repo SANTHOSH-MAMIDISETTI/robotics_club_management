@@ -14,7 +14,7 @@ The Robotics Club Management System (CMS) is a web application designed to manag
 - **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 - **SQLite**: Default database used for storing user and group data.
 - **Python**: Programming language used for backend development.
-- **HTML/CSS**: For frontend development.
+- **HTML/CSS/Bootstrap**: For frontend development.
 
 ## Installation
 
