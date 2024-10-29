@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- This will render the username and password fields -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
