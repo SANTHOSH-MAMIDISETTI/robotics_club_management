@@ -27,3 +27,4 @@ The Robotics Club Management System (CMS) is a web application designed to manag
    ```bash
    git clone https://github.com/SANTHOSH-MAMIDISETTI/robotics_club_management.git
    
+rest to be added 
