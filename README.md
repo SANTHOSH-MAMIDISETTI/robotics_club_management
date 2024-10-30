@@ -19,8 +19,8 @@ The Robotics Club Management System (CMS) is a web application designed to manag
 ## Installation
 
 ### Prerequisites
-- Python 3.x
-- Django 4.x
+- Python 3.10.12
+- Django 5.1.2
 
 ### Steps
 1. **Clone the Repository**:
