@@ -1,17 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <div class="container mt-5">
-        
-        <form class="col-6 mx-auto card shadow-lg p-3" method="post">
-            <h1>Login</h1>
-            <hr>
-            {% csrf_token %}
-            <div class=" mx-auto">
-                {{ form.as_p }}
-            <button class="btn btn-success mx-auto" type="submit">Login</button>
-
-            </div>
-        </form>
+<div class="container mx-auto mt-10 p-6 max-w-md bg-gray-800 rounded-lg shadow-lg">
+  <form method="post" class="space-y-6">
+    <h1 class="text-3xl font-bold text-center text-white mb-4">Login</h1>
+    <hr class="border-gray-700">
+    {% csrf_token %}
+    <div class="space-y-4">
+      {{ form.as_p }}
     </div>
+    <div class="text-center">
+      <button class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200" type="submit">Login</button>
+    </div>
+  </form>
+</div>
 {% endblock %}
+
