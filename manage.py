@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# robotics_club_cms/manage.py
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

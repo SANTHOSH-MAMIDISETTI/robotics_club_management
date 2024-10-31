@@ -53,23 +53,35 @@ The Robotics Club Management System (CMS) is a web application designed to manag
    pip install -r requirements.txt
    ```
 
-6. **Run Database Migrations**:
+6. **Set the DJANGO_SETTINGS_MODULE Environment Variable**:
+      - In Development use
+      ```bash
+      export DJANGO_SETTINGS_MODULE=robotics_club_cms.settings.development
+      ```
+      - In production use 
+      ```bash
+      export DJANGO_SETTINGS_MODULE=robotics_club_cms.settings.production
+      ```
+
+7. **Run Database Migrations**:
    ```bash
    python manage.py migrate
    ```
 
-7. **Create a Superuser** (optional):
+8. **Create a Superuser** (optional):
    ```bash
    python manage.py createsuperuser
    ```
 
-8. **Run the Development Server**:
+9. **Run the Development Server**:
    ```bash
    python manage.py runserver
    ```
 
-9. **Access the Application**:
-   Open your web browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to view the application.
+10. **Access the Application**:
+    Open your web browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to view the application.
+
+
 
 ## Contributing
 We welcome contributions to improve the Club Management System! Whether you're a developer, designer, or documentation enthusiast, your input is invaluable. Feel free to open issues for new features, submit pull requests, and share your ideas. Your contributions mean a lot to us, and we appreciate your support in making this project better !
