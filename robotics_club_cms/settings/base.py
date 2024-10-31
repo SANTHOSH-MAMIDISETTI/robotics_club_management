@@ -1,3 +1,4 @@
+# robotics_club_cms/settings.py
 """
 Django settings for robotics_club_cms project.
 
