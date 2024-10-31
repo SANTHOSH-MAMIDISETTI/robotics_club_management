@@ -1,7 +1,80 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1>Welcome to the Robotics Club CMS</h1>
-    <h2>Home Page</h2>
-    <p>Your content here.</p>
+    <div class="container text-center my-5">
+        <h1 class="display-4">Welcome to the Robotics Club Management System</h1>
+        <h2 class="mb-4">Empowering Future Innovators</h2>
+        <p class="lead">The Robotics Club Management System (CMS) is your all-in-one platform for managing club activities, members, and projects.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg my-3">Get Started</a>
+    </div>
+
+    <div class="container my-5">
+        <h3>Overview</h3>
+        <p>The Robotics Club Management System is designed to enhance collaboration among robotics enthusiasts, streamline communication, and foster an environment of innovation. With a user-friendly interface, the CMS allows members to easily navigate through their profiles, manage group activities, and participate in club events.</p>
+        <p>This system not only serves as a database for member information but also provides tools for group management, ensuring that every team has the guidance of experienced mentors. Whether you are an alumni, staff member, mentor, or admin, this platform is tailored to meet your specific needs and roles within the club.</p>
+    </div>
+
+    <div class="container my-5">
+        <h3>Key Features</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">User Authentication</h5>
+                        <p class="card-text">Secure login for members with various roles, including Alumni, Staff, Mentor, and Admin, ensuring that only authorized users can access sensitive information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Pages</h5>
+                        <p class="card-text">Each user has a dedicated profile showcasing their name, role, group affiliation, account creation date, and contributions to the club.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Group Management</h5>
+                        <p class="card-text">Flexibility in organization with groups requiring assigned mentors, enabling effective supervision and guidance for all members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">User Data Management</h5>
+                        <p class="card-text">Effortlessly save usernames, roles, and groups to a file for streamlined management and reporting, simplifying the administrative tasks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Intuitive Interface</h5>
+                        <p class="card-text">Enjoy a user-friendly experience built with Django and enhanced CSS, making navigation and usage straightforward for all members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h3>Technologies Used</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Django:</strong> A high-level Python web framework for rapid development and clean design.</li>
+            <li class="list-group-item"><strong>SQLite:</strong> The default database used for storing user and group data.</li>
+            <li class="list-group-item"><strong>Python:</strong> The programming language powering our backend development.</li>
+            <li class="list-group-item"><strong>HTML/CSS/Bootstrap:</strong> For crafting a responsive and engaging frontend.</li>
+        </ul>
+    </div>
+
+    <div class="container text-center my-5">
+        <p>Join us in building the future of robotics!</p>
+        <a href="https://github.com/malay5/robotics_club_management" class="btn btn-secondary">Fork Me on GitHub</a>
+    </div>
 {% endblock %}
