@@ -85,3 +85,6 @@ The Robotics Club Management System (CMS) is a web application designed to manag
 
 ## Contributing
 We welcome contributions to improve the Club Management System! Whether you're a developer, designer, or documentation enthusiast, your input is invaluable. Feel free to open issues for new features, submit pull requests, and share your ideas. Your contributions mean a lot to us, and we appreciate your support in making this project better !
+
+### Hacktoberfest
+For those concerned about the absence of Hacktoberfest labels, please note that any meaningful pull requests (PRs) you submit will be thoroughly reviewed and, if accepted, labeled as Hacktoberfest. Your contributions are valued!
