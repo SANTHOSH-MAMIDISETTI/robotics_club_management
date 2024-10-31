@@ -3,9 +3,7 @@ name: Branch Protection Checks
 on:
   pull_request:
     paths-ignore:
-      - '**/*.md'
-      - 'docs/**'
-      - '**/*.wiki'
+      - '**/*.md'  # Ignore all Markdown files in any directory
 
 jobs:
   test:
@@ -13,8 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      # Add your test steps or checks here, such as linting or unit tests
+
+      # Add specific test steps here if needed
       - name: Run Code Checks
         run: |
           echo "Running checks on essential files only."
