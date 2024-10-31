@@ -1,0 +1,20 @@
+name: Branch Protection Checks
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+      - '**/*.wiki'
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Add your test steps or checks here, such as linting or unit tests
+      - name: Run Code Checks
+        run: |
+          echo "Running checks on essential files only."
