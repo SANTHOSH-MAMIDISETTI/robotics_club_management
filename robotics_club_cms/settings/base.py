@@ -98,6 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # by me
 AUTH_USER_MODEL = 'core.User'
+
 LOGIN_URL = 'login'  # This should match the name of your login URL
 LOGOUT_REDIRECT_URL = 'home'  # Redirect to home after logout
 

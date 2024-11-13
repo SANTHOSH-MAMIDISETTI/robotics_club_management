@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h1>Groups</h1>
+  <ul>
+    {% for group in groups %}
+      <li>{{ group.name }} - Mentor: {{ group.mentor }} 
+        <a href="{% url 'group_update' group.pk %}">Edit</a> |
+        <a href="{% url 'group_delete' group.pk %}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'group_create' %}">Create New Group</a>
+{% endblock %}

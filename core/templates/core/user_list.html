@@ -1,11 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1>User List</h1>
+  <h1>Users</h1>
+  <ul>
     {% for user in users %}
-        <p>
-            <a href="{% url 'profile' user.id %}">{{ user.username }}</a>
-            ({{ user.role.name }}, {{ user.group.name }})
-        </p>
+      <li>
+        {{ user.username }} - {{ user.role }} 
+        <a href="{% url 'user_update' user.pk %}">Edit</a> |
+        <a href="{% url 'user_delete' user.pk %}">Delete</a>
+      </li>
     {% endfor %}
+  </ul>
+  <a href="{% url 'user_create' %}">Create New User</a>
 {% endblock %}
