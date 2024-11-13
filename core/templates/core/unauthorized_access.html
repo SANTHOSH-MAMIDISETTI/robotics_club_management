@@ -1,8 +1,9 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h1>You do not have permission to access this page.</h1>
-        <a href="{% url 'home' %}">Go to home</a>
+    <div class="container text-center mt-5">
+        <h2>Unauthorized Access</h2>
+        <p>You need to log in to access this page.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
     </div>
 {% endblock %}

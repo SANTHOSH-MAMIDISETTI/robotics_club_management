@@ -1,8 +1,43 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1>{{ user.username }}'s Profile</h1>
-    <p>Role: {{ user.role.name }}</p>
-    <p>Group: {{ user.group.name }}</p>
-    <p>Account Created: {{ user.date_joined }}</p>
+  <div class="container my-5">
+    <div class="row">
+      <!-- User Avatar Section -->
+      <div class="col-md-4 text-center">
+        <!-- Placeholder Image if no avatar exists -->
+        <img src="https://via.placeholder.com/200" alt="{{ user.username }}'s Avatar" class="img-fluid rounded-circle mb-4" style="max-width: 200px;">
+      </div>
+
+      <!-- User Profile Details Section -->
+      <div class="col-md-8">
+        <h1 class="display-4 mb-4">{{ user.username }}'s Profile</h1>
+        
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Profile Information</h5>
+            
+            <div class="row mb-3">
+              <div class="col-sm-4"><strong>Role:</strong></div>
+              <div class="col-sm-8">{{ user.role.name }}</div>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="col-sm-4"><strong>Group:</strong></div>
+              <div class="col-sm-8">{{ user.group.name }}</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-4"><strong>Account Created:</strong></div>
+              <div class="col-sm-8">{{ user.date_joined|date:"F j, Y" }}</div>
+            </div>
+            
+            <div class="mt-4">
+              <a href="{% url 'user_update' user.pk %}" class="btn btn-primary btn-lg">Edit Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

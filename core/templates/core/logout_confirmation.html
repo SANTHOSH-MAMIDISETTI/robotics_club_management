@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Logged Out</title>
-</head>
-<body>
-    <h1>You have been logged out</h1>
-    <p>Thank you for using the Robotics Club CMS. You can log in again <a href="{% url 'login' %}">here</a>.</p>
-    <a href="{% url 'home' %}">Back to Home</a>
-</body>
-</html>
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="alert alert-success" role="alert">
+            <h2>You have been logged out successfully!</h2>
+            <p>You will be redirected to the login page in <span id="countdown">3</span> seconds...</p>
+        </div>
+
+        <div class="mt-4">
+            <a href="{% url 'login' %}" class="btn btn-primary">Login Again</a>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Go to Home</a>
+        </div>
+    </div>
+
+    <!-- handle the redirect with countdown -->
+    <script type="text/javascript">
+        let countdownElement = document.getElementById('countdown');
+        let countdownTime = 3;  // 3 seconds countdown
+
+        // Update the countdown every second
+        let countdownInterval = setInterval(function() {
+            countdownTime--;
+            countdownElement.textContent = countdownTime;
+
+            // When countdown reaches 0, stop the interval and redirect
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "{% url 'login' %}";  // Redirect to login page
+            }
+        }, 1000);  // 1000 milliseconds = 1 second
+    </script>
+
+    <style>
+        .alert {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .btn {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .mt-5 {
+            margin-top: 5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+    </style>
+{% endblock %}

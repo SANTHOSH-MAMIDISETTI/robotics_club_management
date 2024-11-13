@@ -1,15 +1,30 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-  <h1>Users</h1>
-  <ul>
-    {% for user in users %}
-      <li>
-        {{ user.username }} - {{ user.role }} 
-        <a href="{% url 'user_update' user.pk %}">Edit</a> |
-        <a href="{% url 'user_delete' user.pk %}">Delete</a>
-      </li>
-    {% endfor %}
-  </ul>
-  <a href="{% url 'user_create' %}">Create New User</a>
+  <div class="container">
+    <h1 class="mb-4">Users</h1>
+
+    <!-- User list -->
+    <ul class="list-group">
+      {% for user in users %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <!-- Make username clickable and link to user profile page -->
+          <span>
+            <a href="{% url 'profile' user.pk %}">{{ user.username }}</a> - 
+            <strong>{{ user.role }}</strong>
+          </span>
+          
+          <div class="actions">
+            <a href="{% url 'user_update' user.pk %}" class="btn btn-sm btn-primary">Edit</a>
+            <a href="{% url 'user_delete' user.pk %}" class="btn btn-sm btn-danger">Delete</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Create User link -->
+    <div class="mt-4">
+      <a href="{% url 'user_create' %}" class="btn btn-success">Create New User</a>
+    </div>
+  </div>
 {% endblock %}

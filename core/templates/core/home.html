@@ -5,13 +5,12 @@
         <h1 class="display-4">Welcome to the Robotics Club Management System</h1>
         <h2 class="mb-4">Empowering Future Innovators</h2>
         <p class="lead">The Robotics Club Management System (CMS) is your all-in-one platform for managing club activities, members, and projects.</p>
+
         {% if user.is_authenticated %}
-        <a href="{% url 'user_list' %}" class="btn btn-primary btn-lg my-3">Get Started</a>
-                        {% else %}
-                            <a href="{% url 'login' %}" class="btn btn-primary btn-lg my-3">Get Started</a>
-                        {% endif %}
-        
-        
+            <a href="{% url 'user_list' %}" class="btn btn-primary btn-lg my-3">Get Started</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg my-3">Get Started</a>
+        {% endif %}
     </div>
 
     <div class="container my-5">
