@@ -8,10 +8,18 @@ class UserAdmin(admin.ModelAdmin):
     search_fields = ('username', 'email')
     list_filter = ('role',)
 
+    def save_model(self, request, obj, form, change):
+        # Hash the password if it's been changed
+        if form.cleaned_data.get('password'):
+            obj.set_password(form.cleaned_data['password'])
+        super().save_model(request, obj, form, change)
+
+
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
+
 
 @admin.register(Group)
 class GroupAdmin(admin.ModelAdmin):
@@ -27,6 +35,8 @@ class GroupAdmin(admin.ModelAdmin):
         return qs.filter(members=request.user)
 
     def save_model(self, request, obj, form, change):
-        if not request.user.is_superuser:
-            obj.members.add(request.user)  # Automatically add the user as a member if they are creating a new group
+        if not request.user.is_superuser and not change:
+            # Automatically add the user as a member if they are creating a new group
+            obj.save()  # Save the group first before adding members
+            obj.members.add(request.user)
         super().save_model(request, obj, form, change)
